@@ -12,13 +12,26 @@
                 <div class="swiper-wrapper">
                     <div class="d-flex flex-direction-nav align-items-center swiper-slide dark" style="background-image: url('{{ secure_asset('/img/home_background.jpg') }}') ; background-size: cover;" data-swiper-slide-index="0">
                         <div class="container clearfix">
-                            <div class="col_full vertical-middle dark fright nobottommargin fadeIn animated text-center" style="top: -63px; position: relative;">
-                                <h3 class="slogan">It's a matter</h3>
-                                <div class="emphasis-title">
-                                    <h2 class="slogan ww-fw-900 text-uppercase">Of taste</h2>
+                            <div class="row justify-content-center">
+                                <div class="col-6 vertical-middle dark fright nobottommargin fadeIn animated" style="top: -63px; position: relative;">
+                                    <form>
+                                        <h2 class="pb-2">{{ __('general.register') }}</h2>
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" id="email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="password">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
