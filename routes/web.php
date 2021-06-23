@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::name('web.')->group(function() {
+    Route::name('site.')->group(function () {
+
+        Route::get('/', 'HomeController@view')->name('home');
+        Route::get('/contact', 'ContactController@view')->name('contact');
+    });
 });
+
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login')->middleware(ProtectAgainstSpam::class);
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
