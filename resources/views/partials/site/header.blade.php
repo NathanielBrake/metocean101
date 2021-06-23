@@ -6,9 +6,6 @@
                data-dark-logo="{{ secure_asset("/img/logo.png") }}" >
                 <img src="{{ secure_asset("/img/logo.png") }}" alt="{{__('general.company')}}">
             </a>
-            <a href="{{route('web.site.home')}}" class="retina-logo" data-dark-logo="{{ secure_asset("img/logo.png") }}" title="{{ __('general.home_page') }}">
-                <img src="{{ secure_asset("img/logo.png") }}" alt="{{__('general.company')}}">
-            </a>
         </div>
         <nav id="primary-menu"  class="dark">
             <ul>
