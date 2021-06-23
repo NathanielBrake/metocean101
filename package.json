@@ -22,6 +22,9 @@
         "@fortawesome/fontawesome-free": "^5.15.3",
         "bootstrap": "^5.0.2",
         "bootstrap-sass": "^3.4.1",
-        "bootstrap-vue": "^2.21.2"
+        "bootstrap-select": "^1.13.18",
+        "bootstrap-vue": "^2.21.2",
+        "jquery-confirm": "^3.3.4",
+        "swiper": "^6.7.1"
     }
 }

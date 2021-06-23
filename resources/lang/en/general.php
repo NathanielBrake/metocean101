@@ -12,17 +12,17 @@ return [
     |
     */
 
-    'company'                   =>  'Wonder Water',
-    'company_physical_address'  =>  '6 Findlay Street, Ellerslie, Auckland 1051',
-    'company_postal_address'    =>  'PO Box 87294, Meadowbank, Auckland 1742',
-    'company_phone'             =>  ' 0508 WONDER',
-    'company_email'             =>  'info@wonderwater.co.nz',
+    'company'                   =>  'Met Ocean Analytics',
+    'company_physical_address'  =>  '59 George Crescent, Pukekohe 2677',
+    'company_postal_address'    =>  '59 George Crescent, Pukekohe 2677',
+    'company_phone'             =>  '021 077 1877',
+    'company_email'             =>  'info@metoceananalytics.co.nz',
 
     //auth
     'forgot_your_password'  => 'forgot your password?',
-    'login'                 => 'login',
-    'logout'                => 'logout',
-    'register'              => 'register',
+    'login'                 => 'Login',
+    'logout'                => 'Logout',
+    'register'              => 'Register',
     'password'              => 'password',
     'agent_password'        => 'Agent password',
     'repassword'            => 're-type your password',

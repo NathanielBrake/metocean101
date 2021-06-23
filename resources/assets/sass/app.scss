@@ -5,7 +5,10 @@
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 
 //font-awesome
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
+// Swiper JS
+@import "~swiper/swiper-bundle.css";

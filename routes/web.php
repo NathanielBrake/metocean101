@@ -25,3 +25,4 @@ Route::name('web.')->group(function() {
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->middleware(ProtectAgainstSpam::class);
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('register', 'Auth\LoginController@register')->name('register');
