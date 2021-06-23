@@ -1074,6 +1074,7 @@ h3.slogan {
 
 .swiper-slide {
   height: calc(100vh - 126px);
+  width: 100vw;
 }
 
 .swiper_wrapper .swiper-container {
