@@ -22,7 +22,8 @@ Route::name('web.')->group(function() {
 });
 
 // Authentication Routes...
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('login', 'Auth\LoginController@showLogin')->name('login');
 Route::post('login', 'Auth\LoginController@login')->middleware(ProtectAgainstSpam::class);
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-Route::post('register', 'Auth\LoginController@register')->name('register');
+Route::get('register', 'Auth\RegisterController@showRegister')->name('register');
+Route::post('register', 'Auth\RegisterController@register')->middleware(ProtectAgainstSpam::class);

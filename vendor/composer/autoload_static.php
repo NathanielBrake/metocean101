@@ -121,12 +121,14 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
             'League\\MimeTypeDetection\\' => 25,
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\' => 18,
+            'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Sail\\' => 13,
         ),
         'I' => 
         array (
             'Illuminate\\Support\\' => 19,
+            'Illuminate\\Foundation\\Auth\\' => 27,
             'Illuminate\\' => 11,
         ),
         'G' => 
@@ -378,6 +380,10 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
         ),
+        'Laravel\\Ui\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/src',
+        ),
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
@@ -390,6 +396,10 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
             1 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections',
+        ),
+        'Illuminate\\Foundation\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
         ),
         'Illuminate\\' => 
         array (
@@ -502,7 +512,11 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
+        'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -517,6 +531,7 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
+        'App\\Providers\\HelperServiceProvider' => __DIR__ . '/../..' . '/app/Providers/HelperServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
@@ -2027,8 +2042,16 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
         'Illuminate\\Foundation\\Application' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Application.php',
         'Illuminate\\Foundation\\Auth\\Access\\Authorizable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/Authorizable.php',
         'Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php',
+        'Illuminate\\Foundation\\Auth\\AuthenticatesUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/AuthenticatesUsers.php',
+        'Illuminate\\Foundation\\Auth\\ConfirmsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ConfirmsPasswords.php',
         'Illuminate\\Foundation\\Auth\\EmailVerificationRequest' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/EmailVerificationRequest.php',
+        'Illuminate\\Foundation\\Auth\\RedirectsUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RedirectsUsers.php',
+        'Illuminate\\Foundation\\Auth\\RegistersUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RegistersUsers.php',
+        'Illuminate\\Foundation\\Auth\\ResetsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ResetsPasswords.php',
+        'Illuminate\\Foundation\\Auth\\SendsPasswordResetEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/SendsPasswordResetEmails.php',
+        'Illuminate\\Foundation\\Auth\\ThrottlesLogins' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ThrottlesLogins.php',
         'Illuminate\\Foundation\\Auth\\User' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/User.php',
+        'Illuminate\\Foundation\\Auth\\VerifiesEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/VerifiesEmails.php',
         'Illuminate\\Foundation\\Bootstrap\\BootProviders' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php',
         'Illuminate\\Foundation\\Bootstrap\\HandleExceptions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php',
         'Illuminate\\Foundation\\Bootstrap\\LoadConfiguration' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php',
@@ -2147,6 +2170,7 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
         'Illuminate\\Hashing\\HashManager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Hashing/HashManager.php',
         'Illuminate\\Hashing\\HashServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Hashing/HashServiceProvider.php',
         'Illuminate\\Http\\Client\\ConnectionException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php',
+        'Illuminate\\Http\\Client\\Events\\ConnectionFailed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/Events/ConnectionFailed.php',
         'Illuminate\\Http\\Client\\Events\\RequestSending' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/Events/RequestSending.php',
         'Illuminate\\Http\\Client\\Events\\ResponseReceived' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/Events/ResponseReceived.php',
         'Illuminate\\Http\\Client\\Factory' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/Factory.php',
@@ -2265,6 +2289,7 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
         'Illuminate\\Queue\\Console\\ListFailedCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php',
         'Illuminate\\Queue\\Console\\ListenCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php',
         'Illuminate\\Queue\\Console\\PruneBatchesCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php',
+        'Illuminate\\Queue\\Console\\PruneFailedJobsCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php',
         'Illuminate\\Queue\\Console\\RestartCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php',
         'Illuminate\\Queue\\Console\\RetryBatchCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php',
         'Illuminate\\Queue\\Console\\RetryCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php',
@@ -2283,6 +2308,7 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
         'Illuminate\\Queue\\Failed\\DynamoDbFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/DynamoDbFailedJobProvider.php',
         'Illuminate\\Queue\\Failed\\FailedJobProviderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/FailedJobProviderInterface.php',
         'Illuminate\\Queue\\Failed\\NullFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/NullFailedJobProvider.php',
+        'Illuminate\\Queue\\Failed\\PrunableFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/PrunableFailedJobProvider.php',
         'Illuminate\\Queue\\InteractsWithQueue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php',
         'Illuminate\\Queue\\InvalidPayloadException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/InvalidPayloadException.php',
         'Illuminate\\Queue\\Jobs\\BeanstalkdJob' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Jobs/BeanstalkdJob.php',
@@ -2575,6 +2601,15 @@ class ComposerStaticInit4e752ec1935a9d40adef7d12b44f4f42
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laravel\\Ui\\AuthCommand' => __DIR__ . '/..' . '/laravel/ui/src/AuthCommand.php',
+        'Laravel\\Ui\\AuthRouteMethods' => __DIR__ . '/..' . '/laravel/ui/src/AuthRouteMethods.php',
+        'Laravel\\Ui\\ControllersCommand' => __DIR__ . '/..' . '/laravel/ui/src/ControllersCommand.php',
+        'Laravel\\Ui\\Presets\\Bootstrap' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Bootstrap.php',
+        'Laravel\\Ui\\Presets\\Preset' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Preset.php',
+        'Laravel\\Ui\\Presets\\React' => __DIR__ . '/..' . '/laravel/ui/src/Presets/React.php',
+        'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
+        'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
+        'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
         'League\\CommonMark\\Block\\Element\\AbstractBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractBlock.php',
         'League\\CommonMark\\Block\\Element\\AbstractStringContainerBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractStringContainerBlock.php',
         'League\\CommonMark\\Block\\Element\\BlockQuote' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/BlockQuote.php',

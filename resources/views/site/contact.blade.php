@@ -10,9 +10,9 @@
 
             <div class="swiper-container swiper-parent swiper-container-horizontal">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide dark" style="background-image: url('{{ secure_asset('/img/site/wonder-water-index-2000.png') }}') ;" data-swiper-slide-index="0">
+                    <div class="d-flex flex-direction-nav align-items-center swiper-slide dark" style="background-image: url('{{ secure_asset('/img/home_background.jpg') }}') ; background-size: cover;" data-swiper-slide-index="0">
                         <div class="container clearfix">
-                            <div class="col_full vertical-middle dark fright nobottommargin fadeIn animated ww-top-85-per text-center">
+                            <div class="col_full vertical-middle dark fright nobottommargin fadeIn animated text-center" style="top: -63px; position: relative;">
                                 <h3 class="slogan">It's a matter</h3>
                                 <div class="emphasis-title">
                                     <h2 class="slogan ww-fw-900 text-uppercase">Of taste</h2>

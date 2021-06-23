@@ -4,7 +4,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <link rel="alternate" hreflang="en-NZ" href="{{ env('APP_URL') }}"/>
         <title>@yield('title') | {{ __('general.company') }}</title>
-        <link rel="shortcut icon" href="{{ secure_asset('/img/favicon.png') }}">
+        <link rel="shortcut icon" href="{{ secure_asset('/img/favicon.ico') }}">
         <meta name="description" content="@yield('description')">
         <meta name="keywords"   content="@yield('keywords')" />
         <meta name="robots" content="index, follow" />
