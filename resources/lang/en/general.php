@@ -48,14 +48,18 @@ return [
     'home_page_description'   => 'Do you want a 7 stage filter water unit? Try our 30 Days risk free now!',
     'contact_title'           => 'Contact us for access to more information',
     'contact_description'     => 'All the ocean analytics you could ask for!',
+    'data_title'              => 'Met Ocean Data',
+    'data_description'        => 'All your ocean analytics in one spot!',
 
     //page keywords
     'home_page_keywords'    => 'wonder water, 7-stage filtration system, instant hot water, instant cold water, water, pure water, great tasting water',
     'contact_keywords'      => '',
+    'data_keywords'         => '',
 
     //menu items
     'home_page'                 => 'Home',
     'contact'                   => 'Contact',
+    'data'                      => 'Data',
 
     //customer related
     'user_greeting'                 =>  'Dear :username :',

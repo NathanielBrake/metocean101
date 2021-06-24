@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::name('web.')->group(function() {
     Route::name('site.')->group(function () {
-
         Route::get('/', 'HomeController@view')->name('home');
         Route::get('/contact', 'ContactController@view')->name('contact');
+        Route::get('/data', 'DataController@view')->middleware(['auth'])->name('data');
     });
 });
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLogin')->name('login');
-Route::post('login', 'Auth\LoginController@login')->middleware(ProtectAgainstSpam::class);
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('doLogin', 'Auth\LoginController@login')->middleware(ProtectAgainstSpam::class)->name('doLogin');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@showRegister')->name('register');
-Route::post('register', 'Auth\RegisterController@register')->middleware(ProtectAgainstSpam::class);
+Route::post('doRegister', 'Auth\RegisterController@register')->middleware(ProtectAgainstSpam::class)->name('doRegister');

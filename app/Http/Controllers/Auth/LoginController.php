@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -32,50 +36,73 @@ class LoginController extends Controller
     }
 
     /**
-     * Handle a login request to the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
-     *
+     * Admin user login
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
-
     public function login(Request $request)
     {
-        $this->validateLogin($request);
-
-        // If the class is using the ThrottlesLogins trait, we can automatically throttle
-        // the login attempts for this application. We'll key this by the username and
-        // the IP address of the client making these requests into this application.
-        if ($this->hasTooManyLoginAttempts($request)) {
-            $this->fireLockoutEvent($request);
-
-            return $this->sendLockoutResponse($request);
+        // Validate the form data
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+        // Attempt to log the user in
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+            // if successful, then redirect to their intended location
+            return redirect()->intended(route('web.site.data'));
         }
 
-        if ($this->attemptLogin($request)) {
-            return $this->sendLoginResponse($request);
-        }
+        throw ValidationException::withMessages([
+            $this->username() => [trans('auth.failed')],
+        ]);
 
-        // If the login attempt was unsuccessful we will increment the number of attempts
-        // to login and redirect the user back to the login form. Of course, when this
-        // user surpasses their maximum number of attempts they will get locked out.
-        $this->incrementLoginAttempts($request);
-
-        return $this->sendFailedLoginResponse($request);
+        // if unsuccessful, then redirect back to the login with the form data
+        return redirect('login')->withInput($request->only('email', 'remember'));
     }
 
     /**
-     * Validate the user login request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return void
+     * Users logout
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    protected function validateLogin(Request $request)
+    public function logout(Request $request)
     {
-        $this->validate($request, [
-            $this->username() => 'required|string',
-            'password' => 'required|string',
-        ]);
+        Auth::guard('web')->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect()->guest(route( 'web.site.home' ));
     }
+    public function username() {
+        return 'email';
+    }
+
+//    public function testLogin()
+//    {
+//        $user = new User;
+//        $user->name = 'Nathaniel';
+//        $user->email = 'nathaniel.brake@gmail.com';
+//        $user->password = Hash::make('test1234');
+//
+//        if ( ! ($user->save()))
+//        {
+//            dd('user is not being saved to database properly - this is the problem');
+//        }
+//
+//        if ( ! (Hash::check('test1234', Hash::make('test1234'))))
+//        {
+//            dd('hashing of password is not working correctly - this is the problem');
+//        }
+//
+//        if ( ! (Auth::attempt(array('email' => 'nathaniel.brake@gmail.com', 'password' => 'test1234'))))
+//        {
+//            dd('storage of user password is not working correctly - this is the problem');
+//        }
+//
+//        else
+//        {
+//            dd('everything is working when the correct data is supplied - so the problem is related to your forms and the data being passed to the function');
+//        }
+//    }
 }

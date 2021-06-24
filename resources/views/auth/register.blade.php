@@ -14,19 +14,36 @@
                         <div class="container clearfix">
                             <div class="row justify-content-center">
                                 <div class="col-6 vertical-middle dark fright nobottommargin fadeIn animated" style="top: -63px; position: relative;">
-                                    <form>
+                                    <form method="POST" action="{{ route('doRegister') }}">
+                                        @honeypot
+                                        {{ csrf_field() }}
                                         <h2 class="pb-2">{{ __('general.register') }}</h2>
                                         <div class="mb-3">
                                             <label for="name" class="form-label">Name</label>
-                                            <input type="text" class="form-control" id="name">
+                                            <input name="name" type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" aria-describedby="nameValidation">
+                                            @if ($errors->has('name'))
+                                                <span id="nameValidation" class="invalid-feedback">
+                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email address</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <input name="email" type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" aria-describedby="emailValidation">
+                                            @if ($errors->has('email'))
+                                                <span id="emailValidation" class="invalid-feedback">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password</label>
-                                            <input type="password" class="form-control" id="password">
+                                            <input name="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" aria-describedby="passwordValidation">
+                                            @if ($errors->has('password'))
+                                                <span id="passwordValidation" class="invalid-feedback">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>

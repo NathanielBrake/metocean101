@@ -14,15 +14,31 @@
                         <div class="container clearfix">
                             <div class="row justify-content-center">
                                 <div class="col-6 vertical-middle dark fright nobottommargin fadeIn animated" style="top: -63px; position: relative;">
-                                    <form>
+                                    <form method="POST" action="{{ route('doLogin') }}">
+                                        @honeypot
+                                        {{ csrf_field() }}
                                         <h2 class="pb-2">{{ __('general.login') }}</h2>
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email address</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <input name="email" type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" aria-describedby="emailValidation">
+                                            @if ($errors->has('email'))
+                                                <span id="emailValidation" class="invalid-feedback">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password</label>
-                                            <input type="password" class="form-control" id="password">
+                                            <input name="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" aria-describedby="passwordValidation">
+                                            @if ($errors->has('password'))
+                                                <span id="passwordValidation" class="invalid-feedback">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <input name="remember" type="checkbox" class="form-check-input" id="rememberMe" {{ old('remember') ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="rememberMe">Remember Me</label>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
