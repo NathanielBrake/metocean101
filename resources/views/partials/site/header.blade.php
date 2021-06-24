@@ -14,9 +14,9 @@
                         <a class="nav-link {{ set_active(['data*']) }}" href="{{ route('web.site.data') }}" title="{{ __('general.data') }}">{{ __('general.data') }}</a>
                     </li>
                 @endauth
-                <li class="nav-item">
-                    <a class="nav-link {{ set_active(['contact*']) }}" href="{{ route('web.site.contact') }}" title="{{ __('general.contact') }}">{{ __('general.contact') }}</a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link {{ set_active(['contact*']) }}" href="{{ route('web.site.contact') }}" title="{{ __('general.contact') }}">{{ __('general.contact') }}</a>--}}
+{{--                </li>--}}
             </ul>
             <div class="navbar-nav d-flex float-end">
                 @auth

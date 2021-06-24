@@ -6,10 +6,15 @@
 
 import 'bootstrap';
 import 'swiper';
+import VueAxios from 'vue-axios';
+import axios from 'axios';
+import VueCompositionAPI from '@vue/composition-api';
 
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+
+Vue.use(VueAxios, axios, VueCompositionAPI);
 
 /**
  * The following block of code may be used to automatically register your

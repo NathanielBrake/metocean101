@@ -19,6 +19,7 @@ Route::name('web.')->group(function() {
         Route::get('/', 'HomeController@view')->name('home');
         Route::get('/contact', 'ContactController@view')->name('contact');
         Route::get('/data', 'DataController@view')->middleware(['auth'])->name('data');
+        Route::post('/getOceanData', 'DataController@getOceanData')->middleware(['auth'])->name('oceanData');
     });
 });
 

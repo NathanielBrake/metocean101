@@ -13,10 +13,9 @@
                     <div class="d-flex flex-direction-nav align-items-center swiper-slide dark" style="background-image: url('{{ secure_asset('/img/home_background.jpg') }}') ; background-size: cover;" data-swiper-slide-index="0">
                         <div class="container clearfix">
                             <div class="col_full vertical-middle dark fright nobottommargin fadeIn animated text-center" style="top: -63px; position: relative;">
-                                <h3 class="slogan">It's a matter</h3>
-                                <div class="emphasis-title">
-                                    <h2 class="slogan ww-fw-900 text-uppercase">Of taste</h2>
-                                </div>
+                                <h1 class="pb-3">Make a more informed decision today.</h1>
+                                <h3 class="pb-3">Get the best interactive data with MetOcean Analytics</h3>
+                                <a href="{{ route('web.site.data') }}" class="btn btn-primary btn-lg">You Won't Look Back!</a>
                             </div>
 
                         </div>
