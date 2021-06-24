@@ -35,7 +35,11 @@ class MetOceanDataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file = Storage::get('city.txt');
+
+        $row = explode("\t", $file);
+
+        return $row;
     }
 
     /**

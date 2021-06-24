@@ -15,7 +15,7 @@ class CreateMetOceanDataTable extends Migration
     {
         Schema::create('met_ocean_data', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('Time', 2);
+            $table->timestamp('Time', 0);
             $table->decimal('lev', 4, 2);
             $table->decimal('hs', 3, 1);
             $table->decimal('hx', 3, 1);
